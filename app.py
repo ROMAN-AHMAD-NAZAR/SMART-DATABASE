@@ -76,4 +76,5 @@ def health_check():
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
-    app.run(host='0.0.0.0', port=port, debug=debug)
+    # Binding to 0.0.0.0 is intentional for cloud deployment compatibility
+    app.run(host='0.0.0.0', port=port, debug=debug)  # nosec B104
