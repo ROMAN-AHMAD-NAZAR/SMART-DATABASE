@@ -14,14 +14,20 @@
 2. Click **"Login"** or **"Start a New Project"**
 3. Sign in with your GitHub account
 
-### Step 2: Create New Project
+### Step 2: Authorize Railway to Access GitHub
 1. Click **"New Project"** button
 2. Select **"Deploy from GitHub repo"**
-3. If first time: Click **"Configure GitHub App"** to authorize Railway
+3. **IMPORTANT**: If you don't see any repositories, click **"Configure GitHub App"**
+4. This will open GitHub's authorization page
+5. Choose one of these options:
+   - **"All repositories"** (recommended - easiest option)
+   - **"Only select repositories"** → Select "SMART-DATABASE"
+6. Click **"Save"** on GitHub
+7. Return to Railway (it will redirect automatically)
 
 ### Step 3: Select Your Repository
-1. Find and select: **"ROMAN-AHMAD-NAZAR/SMART-DATABASE"**
-2. Click on the repository to select it
+1. Now you should see your repositories listed
+2. Find and click: **"ROMAN-AHMAD-NAZAR/SMART-DATABASE"**
 3. Railway will automatically detect it's a Python app
 
 ### Step 4: Select Branch
@@ -97,6 +103,27 @@ Expected response:
 ---
 
 ## 🐛 Troubleshooting
+
+### Repository Not Showing Up?
+**This is the most common issue!** Railway needs permission to access your GitHub repository.
+
+**Solution:**
+1. Go to [railway.app](https://railway.app) and login
+2. Click **"New Project"** → **"Deploy from GitHub repo"**
+3. Click **"Configure GitHub App"** (you'll see this if no repos show)
+4. This opens GitHub permissions page
+5. On GitHub, select one of these options:
+   - **"All repositories"** (easiest - gives Railway access to all your repos)
+   - **"Only select repositories"** → Choose **"SMART-DATABASE"**
+6. Click **"Save"** on GitHub
+7. Go back to Railway and refresh the page
+8. Your repository should now appear in the list!
+
+**Still not showing?**
+- Make sure you're logged into GitHub with the account that owns the repository
+- Check that the repository is not private (or Railway has access to private repos)
+- Try logging out of Railway and logging back in
+- Clear your browser cache and try again
 
 ### Deployment Failed?
 **Check the deployment logs:**
