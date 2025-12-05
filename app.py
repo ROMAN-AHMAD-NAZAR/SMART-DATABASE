@@ -1,12 +1,10 @@
 # app.py
 
-# --- Imports remain the same ---
+import os
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
-# --- [CHANGE #1] ---
-# We no longer need the 'time' library.
-# Instead, we import the REAL function from your other file.
+# Import the database query function
 from Agent import get_answer_from_database
 
 # --- Create the Flask App (remains the same) ---
@@ -48,6 +46,8 @@ def serve_page():
     return render_template("index.html")
 
 
-# --- Running the App (remains the same) ---
+# --- Running the App ---
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(host='0.0.0.0', port=port, debug=debug)
