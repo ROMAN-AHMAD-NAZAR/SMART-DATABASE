@@ -4,8 +4,8 @@ import sqlite3
 import glob
 
 # --- CONFIGURATION ---
-# IMPORTANT: Change this to the full path of your CSV_DATASET folder
-CSV_FOLDER_PATH = '/home/roman/erisp_genai/My_files/CAR_AGENT/CSV_DATASET' 
+# Use environment variable or relative path for portability
+CSV_FOLDER_PATH = os.environ.get('CSV_FOLDER_PATH', './CSV_DATASET')
 DB_FILE_PATH = 'cars.db'  # This will be the name of your new, clean database
 
 def create_car_database():
