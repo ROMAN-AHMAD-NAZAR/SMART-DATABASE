@@ -39,11 +39,37 @@ def handle_query():
         return jsonify({"success": False, "error": "An internal server error occurred."}), 500
 
 
-# --- Serving the HTML page (remains the same) ---
+# --- Serving the HTML page ---
 @app.route("/")
 def serve_page():
     """This function runs when someone goes to the main page."""
     return render_template("index.html")
+
+
+# --- Health Check Endpoint ---
+@app.route("/health")
+def health_check():
+    """Health check endpoint for monitoring and deployment verification."""
+    import sqlite3
+    try:
+        # Check database connection
+        conn = sqlite3.connect('cars.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM cars')
+        car_count = cursor.fetchone()[0]
+        conn.close()
+        
+        return jsonify({
+            "status": "healthy",
+            "database": "connected",
+            "car_count": car_count,
+            "version": "1.0.0"
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "status": "unhealthy",
+            "error": str(e)
+        }), 500
 
 
 # --- Running the App ---
