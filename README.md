@@ -2,11 +2,11 @@
 
 An intelligent Flask web application that uses LangGraph and LLMs (Groq/OpenAI) to answer natural language questions about a used car database. The app features a beautiful, animated UI and a powerful SQL agent that can understand and respond to complex queries.
 
-> **🚀 Ready to Deploy on Render.com?** 
+> **🚀 Ready to Deploy?** Choose your platform:
 > 
-> **Step-by-step guide**: [RENDER_DEPLOY.md](RENDER_DEPLOY.md) - Complete Render.com deployment instructions
-> 
-> **Quick start**: [QUICKSTART.md](QUICKSTART.md) - 5-minute deployment guide for all platforms
+> - **🚂 Railway** (Recommended): [RAILWAY_DEPLOY.md](RAILWAY_DEPLOY.md) - $5 free credit, auto-deploy from GitHub
+> - **🌟 Render.com**: [RENDER_DEPLOY.md](RENDER_DEPLOY.md) - Free tier with 750 hours/month
+> - **⚡ Quick start**: [QUICKSTART.md](QUICKSTART.md) - 5-minute guide for all platforms
 
 ## ✨ Features
 
