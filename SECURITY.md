@@ -3,17 +3,27 @@
 ## Security Scan Results
 
 **Date**: 2025-12-05  
-**Status**: ✅ PASSED
+**Status**: ✅ PASSED  
+**Last Updated**: 2025-12-05 (Gunicorn vulnerability patched)
 
 ### Security Assessment
 
-This application has been scanned for security vulnerabilities using Bandit (Python security linter) and manual code review.
+This application has been scanned for security vulnerabilities using Bandit (Python security linter), dependency vulnerability scanning, and manual code review.
 
 ### Findings
 
 #### ✅ No Critical or High Severity Issues
 
 The security scan found **0 high-severity issues** and **0 critical issues**.
+
+#### 🔒 Dependency Vulnerabilities - PATCHED
+
+**Issue**: Gunicorn HTTP Request/Response Smuggling vulnerability  
+**CVE**: Request smuggling leading to endpoint restriction bypass  
+**Affected Version**: gunicorn < 22.0.0  
+**Status**: ✅ **FIXED** - Updated to gunicorn 22.0.0  
+**Date Fixed**: 2025-12-05  
+**Action Taken**: Updated `requirements.txt` from gunicorn 21.2.0 to 22.0.0
 
 #### ⚠️ Medium Severity Issues - RESOLVED
 
